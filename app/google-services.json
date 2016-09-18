@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341062832825",
+    "firebase_url": "https://jackclock-5ad67.firebaseio.com",
+    "project_id": "jackclock-5ad67",
+    "storage_bucket": "jackclock-5ad67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341062832825:android:26a161f714e234cf",
+        "android_client_info": {
+          "package_name": "com.jackleeentertainment.jackclock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341062832825-sdl11pa0lodd4c7mc6imcbecjjv4lb4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jackleeentertainment.jackclock",
+            "certificate_hash": "C345422500707A455B2B708FB81EB9429B6F34B4"
+          }
+        },
+        {
+          "client_id": "341062832825-nntciiqmv9ip8uqfcjc9582g0qorbur8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRg0qV-WHPH9DphxGTeAgZ3PD-CAxbqOA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341062832825-nntciiqmv9ip8uqfcjc9582g0qorbur8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

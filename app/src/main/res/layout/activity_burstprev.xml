@@ -16,7 +16,7 @@
 
         <!--Header-->
         <include
-            layout="@layout/lo_avatartitlesubtitle"
+            layout="@layout/lo_avatar_titlesubtitle"
             android:layout_width="match_parent"
             android:layout_height="@dimen/md_72dip"
             android:layout_alignParentTop="true" />

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dip"
+        android:text="@string/detail"
+        android:textSize="@dimen/textSizeOfDetailRecentPost__lo_alarm_more_content" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dip"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                    android:layout_height="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                    android:layout_marginRight="4dip"
+                    android:src="@drawable/ic_videocam_white_48dp" />
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tvVideoBy__lo_alarm_more_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dip"
+                        android:text="Video by"
+                        android:textSize="@dimen/textSizeOfVideoSoundVibe__lo_alarm_more_content" />
+
+                    <ImageView
+                        android:id="@+id/ivVideoTakerPhoto__lo_alarm_more_content"
+                        android:layout_width="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                        android:layout_height="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                        android:layout_marginRight="4dip" />
+
+                    <TextView
+                        android:id="@+id/tvVideoTakerName__lo_alarm_more_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dip"
+                        android:text="Jack Lee"
+                        android:textSize="@dimen/textSizeOfVideoSoundVibe__lo_alarm_more_content"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvVideoTakenAt__lo_alarm_more_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6 hours ago"
+                        android:textSize="@dimen/textSizeOfDetailRecentPost__lo_alarm_more_content" />
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                    android:layout_height="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                    android:layout_marginRight="4dip"
+                    android:src="@drawable/ic_volume_up_white_48dp" />
+
+                <TextView
+                    android:id="@+id/tvSound__lo_alarm_more_content"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="My Cool Sound"
+                    android:textSize="@dimen/textSizeOfVideoSoundVibe__lo_alarm_more_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                    android:layout_height="@dimen/ivVideoSoundVibeIconHW__lo_alarm_more_content"
+                    android:layout_marginRight="4dip"
+                    android:src="@drawable/ic_vibration_white_48dp" />
+
+                <TextView
+                    android:id="@+id/tvVibe__lo_alarm_more_content"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="My Cool Vibration"
+                    android:textSize="@dimen/textSizeOfVideoSoundVibe__lo_alarm_more_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/ibMore__lo_alarm_more_content"
+                style="@style/Base.Widget.AppCompat.ImageButton"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="12dip"
+                android:layout_marginTop="16dip"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="4dip"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_more_vert_white_48dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTag__lo_alarm_more_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dip"
+        android:text="#Sport, #Team" />
+
+    <TextView
+        android:id="@+id/tvDetail__lo_alarm_more_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="This is my cool alarm. Everybody be my guest!" />
+
+</LinearLayout>

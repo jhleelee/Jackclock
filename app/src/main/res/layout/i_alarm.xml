@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:application="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="360dip"
+    android:background="@android:color/darker_gray"
+    android:gravity="center_horizontal|top"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/ro_media"
+        layout="@layout/ro_media"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/ro_alarm_clock"
+        layout="@layout/ro_alarm_clock"
+        android:layout_width="match_parent"
+        android:layout_height="64dip"
+        android:layout_centerInParent="true" />
+
+
+    <include
+        android:id="@+id/v_scrim_gradient_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/md_168dip"
+        layout="@layout/v_scrim_gradient_top"/>
+
+    <include
+        android:id="@+id/lo_avatartitlesubtitle"
+        layout="@layout/lo_avatar_titlesubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/md_72dip"
+        android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:id="@+id/ibPower"
+        android:padding="4dip"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="16dip"
+        android:layout_marginRight="12dip"
+        android:src="@drawable/ic_power_settings_new_white_48dp"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="40dip"
+        android:layout_height="40dip" />
+
+    <ImageButton
+        android:id="@+id/ibMore"
+        android:padding="4dip"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="8dip"
+        android:layout_marginRight="12dip"
+        android:src="@drawable/ic_expand_more_white_48dp"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="40dip"
+        android:layout_height="40dip" />
+
+    <include
+        android:id="@+id/lo_repeat_sndvib"
+        layout="@layout/lo_joined_repeat_sndvib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        />
+
+    //INVITED
+
+    <!--<include-->
+        <!--layout="@layout/lo"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--/>-->
+
+    <include
+        android:id="@+id/v_scrim_solid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/v_scrim_solid"
+        android:visibility="gone"/>
+
+
+
+    //IS ACTIVE
+
+
+    <!--<ImageView-->
+
+        <!--android:id="@+id/ivSetting"-->
+        <!--android:layout_width="32dip"-->
+        <!--android:layout_height="32dip"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginRight="2dip"-->
+        <!--android:layout_marginTop="8dip"-->
+        <!--android:layout_toLeftOf="@+id/ivActive"-->
+        <!--android:background="@color/transparent"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@drawable/ic_action_settings"-->
+        <!--android:visibility="gone" />-->
+
+
+</RelativeLayout>
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/lo_alarm_more_content"
+        layout="@layout/lo_alarm_more_content"/>
+
+
+    <include
+        android:id="@+id/lo_listof__lo_avatar_namemultitext_lohourlikereply"
+        layout="@layout/lo_listof__lo_avatar_namemultitext_lohourlikereply"/>
+
+
+</LinearLayout>

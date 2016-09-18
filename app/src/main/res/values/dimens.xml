@@ -1,0 +1,62 @@
+<resources>
+
+    <!--Anroid Design Guidelines-->
+
+    <!--   Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!--   Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--Jack refered Android Design Guidelines-->
+    <dimen name="md_8dip">8dp</dimen>
+    <dimen name="md_12dip">12dp</dimen>
+    <dimen name="md_16dip">16dp</dimen>
+    <dimen name="md_24dip">24dp</dimen>
+    <dimen name="md_40dip">40dp</dimen>
+    <dimen name="md_48dip">48dp</dimen>
+    <dimen name="md_64dip">64dp</dimen>
+    <dimen name="md_72dip">72dp</dimen>
+    <dimen name="md_76dip">76dp</dimen>
+    <dimen name="md_168dip">168dip</dimen>
+
+    <dimen name="md_13sp">13sp</dimen>
+    <dimen name="md_14sp">14sp</dimen>
+    <dimen name="md_24sp">24sp</dimen>
+
+
+    <!--Commom-->
+    <dimen name="paddingLeftRight_smallitems">4dp</dimen>
+
+
+    <!--MainActivity-->
+
+    <!--    MainActivity_Frag0-->
+
+    <!--        i_alarm-->
+    <dimen name="profilephotoHW_powerbtnHW__i_alarm">40dp</dimen>
+    <dimen name="profilephotoHW__i_feed_simple">40dp</dimen>
+    <dimen name="lonamejoinedh__i_alarm">16dp</dimen>
+    <dimen name="tvExplanationMargin__ro_alarm_invited">16dp</dimen>
+    <dimen name="textSizeOftvContent__i_feed_simple">12dp</dimen>
+    <dimen name="H__ro_alarm_clock">64dp</dimen>
+    <dimen name="tvSnzOrSetH">56dp</dimen>
+
+    <!--        lo_avatar_namechk-->
+    <dimen name="textSizeOftvContent__i_person_namechk">12dp</dimen>
+    <dimen name="chkboxWH__i_person_namechk">24dp</dimen>
+
+    <!--ro_person_photo_64dip-->
+    <dimen name="photoHW_ro_person_photo_64dip">56dip</dimen>
+
+    <!--lohourlikereply-->
+    <dimen name="textSizeOfHourAgoFavoriteReply_lohourlikereply">11sp</dimen>
+
+    <!--lo_alarm_more_content-->
+    <dimen name="ivVideoSoundVibeIconHW__lo_alarm_more_content">14dp</dimen>
+    <dimen name="textSizeOfDetailRecentPost__lo_alarm_more_content">12dp</dimen>
+    <dimen name="textSizeOfVideoSoundVibe__lo_alarm_more_content">14sp</dimen>
+
+</resources>
