@@ -16,8 +16,7 @@ import android.net.Uri;
 import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.StyleRes;
-import android.support.multidex.MultiDexApplication;
-import android.util.Log;
+ import android.util.Log;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,12 +28,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.socialalarm.util.ApplicationLifecycleHandler;
+import com.jackleeentertainment.jackclock.object.Profile;
+
 
 import java.util.ArrayList;
 
@@ -44,6 +39,9 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private final static String TAG = Application.class.getSimpleName();
+
+
+    static Profile myProfile;
 
     public static FirebaseAuth mAuth;
     public static FirebaseAuth.AuthStateListener mAuthListener;
@@ -62,6 +60,7 @@ public class App extends Application {
     /*
     USER
      */
+
     public static Uri UrlFbaseBasicPhoto;
     static String UID;
     public static String Name;
@@ -79,7 +78,7 @@ public class App extends Application {
 
 
     public static Application getInstance() {
-        return new Application();
+        return new App();
     }
 
 
@@ -88,12 +87,10 @@ public class App extends Application {
         Log.d(TAG, "Application.onCreate - Initializing application...");
         super.onCreate();
         appContext = getApplicationContext();
+        myProfile = new Profile();
         initFbaseDatabase();
         initApplicationLifecycleHandler();
         Log.d(TAG, "Application.onCreate - Application initialized OK");
-
-
-
     }
 
     public static void initFirebaseAuth() {
@@ -102,23 +99,23 @@ public class App extends Application {
 
 
     public static void initFirebaseAuthStateListener(final Activity context) {
-        Application.mAuthListener = new FirebaseAuth.AuthStateListener() {
+        App.mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    Application.initFirebaseUser(user);
+                    App.initFirebaseUser(user);
 
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Application.nullifyFirebaseUser();
+                    App.nullifyFirebaseUser();
 
                     context.startActivityForResult(
                             AuthUI.getInstance().createSignInIntentBuilder()
-                                    .setTheme(R.style.GreenTheme)
+                                    .setTheme(R.style.AppTheme)
                                     .setProviders(getSelectedProviders())
                                     .setTosUrl(getSelectedTosUrl())
                                     .build(),
@@ -199,48 +196,7 @@ public class App extends Application {
         return appContext;
     }
 
-    private void initAUIL() {
-        DisplayImageOptions defaultoptions = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .considerExifParams(true)
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .build();
 
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .threadPriority(Thread.NORM_PRIORITY - 2)
-                .memoryCacheSize(20 * 1024 * 1024) // 20 Mb
-                .denyCacheImageMultipleSizesInMemory()
-                .diskCacheExtraOptions(480, 320, null)
-                .tasksProcessingOrder(QueueProcessingType.LIFO)
-                .defaultDisplayImageOptions(defaultoptions)
-                .threadPoolSize(5)
-                .build();
-        ImageLoader.getInstance().init(config);
-
-
-        civ_options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.nullperson)
-                .showImageForEmptyUri(R.drawable.nullperson)
-                .showImageOnFail(R.drawable.nullperson)
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .considerExifParams(true)
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .build();
-
-        civ_options_greybackground = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.color.light_grey)
-                .showImageForEmptyUri(R.color.light_grey)
-                .showImageOnFail(R.drawable.nullperson)
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .considerExifParams(true)
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .build();
-    }
 
     public static void initFREFifNull() {
         if (fbaseDbRef == null) {
@@ -281,7 +237,7 @@ public class App extends Application {
 
 
 
-            UID = firebaseUser.getUid();
+            myProfile.setUid(firebaseUser.getUid());
 
             // Name, email address, and profile photo Url
             Name = firebaseUser.getDisplayName();
@@ -295,13 +251,13 @@ public class App extends Application {
 
     public static String getUID(){
 
-        if (Application.UID!=null){
+        if (App.UID!=null){
             return  UID;
         } else {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
                 // User is signed in
-                Application.UID = user.getUid();
+                App.UID = user.getUid();
                 return user.getUid();
             } else {
                 // No user is signed in
@@ -312,10 +268,13 @@ public class App extends Application {
     }
 
     public static void setUID(String UID){
-        Application.UID = UID;
+        App.UID = UID;
 
     }
 
+    /*
+    User
+     */
 
     public static void initFirebaseUser(FirebaseUser firebaseUser) {
 
@@ -354,6 +313,16 @@ public class App extends Application {
     }
 
 
+    /*
+    Getter and Setter
+     */
+    public Profile getMyProfile() {
+        return myProfile;
+    }
+
+    public void setMyProfile(Profile myProfile) {
+        this.myProfile = myProfile;
+    }
 
 
 }
