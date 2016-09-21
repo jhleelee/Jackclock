@@ -18,13 +18,40 @@ public class Ram {
     static public HashMap<String, AlarmOwner> hmapAlarmOwners;
 
 
-    void init() {
+    public static void initHmapPosts() {
         hmapPosts = new HashMap<>();
-        hmapProfiles = new HashMap<>();
-        hmapAlarmOwners = new HashMap<>();
     }
 
 
+    public static void initHmapProfiles() {
+        hmapProfiles = new HashMap<>();
+    }
+
+
+    public static void initHmapAlarmOwners() {
+        hmapAlarmOwners = new HashMap<>();
+    }
+
+    private void addPost(String postId, Post post) {
+        if (Ram.hmapPosts == null){
+            Ram.initHmapPosts();
+        }
+        Ram.hmapPosts.put(postId, post);
+    }
+
+    private void addProfile(String uid, Profile profile) {
+        if (Ram.hmapProfiles == null){
+            Ram.initHmapProfiles();
+        }
+        Ram.hmapProfiles.put(uid, profile);
+    }
+
+    private void addAlarmOwner(String aid, AlarmOwner alarmOwner) {
+        if (Ram.hmapAlarmOwners == null){
+            Ram.initHmapAlarmOwners();
+        }
+        Ram.hmapAlarmOwners.put(aid, alarmOwner);
+    }
 
 
 }
