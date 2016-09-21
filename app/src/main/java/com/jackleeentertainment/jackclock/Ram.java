@@ -13,15 +13,9 @@ import java.util.HashMap;
 
 public class Ram {
 
-    HashMap<String, Post> hmapPosts;
-    HashMap<String, Profile> hmapProfiles;
-    HashMap<String, AlarmOwner> hmapAlarmOwners;
-
-    public Ram() {
-        super();
-        init();
-    }
-
+    static public HashMap<String, Post> hmapPosts;
+    static public HashMap<String, Profile> hmapProfiles;
+    static public HashMap<String, AlarmOwner> hmapAlarmOwners;
 
 
     void init() {
@@ -31,31 +25,6 @@ public class Ram {
     }
 
 
-    /*
-    Getter , Setter
-     */
-    public HashMap<String, AlarmOwner> getHmapAlarmOwners() {
-        return hmapAlarmOwners;
-    }
 
-    public void setHmapAlarmOwners(HashMap<String, AlarmOwner> hmapAlarmOwners) {
-        this.hmapAlarmOwners = hmapAlarmOwners;
-    }
-
-    public HashMap<String, Post> getHmapPosts() {
-        return hmapPosts;
-    }
-
-    public void setHmapPosts(HashMap<String, Post> hmapPosts) {
-        this.hmapPosts = hmapPosts;
-    }
-
-    public HashMap<String, Profile> getHmapProfiles() {
-        return hmapProfiles;
-    }
-
-    public void setHmapProfiles(HashMap<String, Profile> hmapProfiles) {
-        this.hmapProfiles = hmapProfiles;
-    }
 
 }
