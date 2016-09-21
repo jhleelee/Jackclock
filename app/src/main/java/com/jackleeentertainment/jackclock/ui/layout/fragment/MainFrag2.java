@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.jackleeentertainment.jackclock.App;
 import com.jackleeentertainment.jackclock.R;
 import com.jackleeentertainment.jackclock.object.AlarmOwner;
 import com.jackleeentertainment.jackclock.object.Post;
@@ -40,7 +41,7 @@ public class MainFrag2 extends ListFrag {
     void initAdapter() {
         super.initAdapter();
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Post, PostViewHolder>
-                (Post.class, R.layout.i_feed, PostViewHolder.class, mRef) {
+                (Post.class, R.layout.i_feed, PostViewHolder.class, null) {
             @Override
             public void populateViewHolder(PostViewHolder postViewHolder,
                                            Post post, int position) {
@@ -100,7 +101,7 @@ public class MainFrag2 extends ListFrag {
             getIbPower().setVisibility(View.GONE);
             getV_scrim_solid().setVisibility(View.GONE);
             getBtDecline__lo_alarm_action().setVisibility(View.GONE);
-            getBtAccept__lo_alarm_action().setText(JM.strById(R.string.deploy, App.getContext));
+            getBtAccept__lo_alarm_action().setText(JM.strById(R.string.deploy, App.getContext()));
         }
 
         public void publicAlarmize_AlarmOwnerRecentPost(Post alarmOwnerRecentPost) {
