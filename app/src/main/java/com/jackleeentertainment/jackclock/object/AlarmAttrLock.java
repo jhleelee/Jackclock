@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class AlarmAttrLock {
 
-    int islocked;
+    boolean islocked;
     String uid;
     long ts;
 
@@ -23,11 +23,11 @@ public class AlarmAttrLock {
         this.ts = ts;
     }
 
-    public int getIslocked() {
+    public boolean getIslocked() {
         return islocked;
     }
 
-    public void setIslocked(int islocked) {
+    public void setIslocked(boolean islocked) {
         this.islocked = islocked;
     }
 

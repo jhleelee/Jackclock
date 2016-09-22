@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Alarm extends  Jack{
 
-    int rtype;
+    double rtype;
     String rweek;
     List<String> rdates;
 
@@ -21,13 +21,13 @@ public class Alarm extends  Jack{
     AlarmAttrLock videolock;
 
     //joinedNum
-    int joined;
+    double joined;
 
     public Alarm() {
         super();
     }
 
-    public int getRtype() {
+    public double getRtype() {
         return rtype;
     }
 
@@ -99,12 +99,6 @@ public class Alarm extends  Jack{
         this.videolock = videolock;
     }
 
-    public int getJoined() {
-        return joined;
-    }
 
-    public void setJoined(int joined) {
-        this.joined = joined;
-    }
 
 }

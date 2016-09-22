@@ -5,6 +5,6 @@ package com.jackleeentertainment.jackclock.object;
  */
 public class RSuggestT {
 
-    final static int NONE=0;
-    final static int SUGGESTED=1;
+    public final static String NONE="a";
+    public   final static String SUGGESTED="b";
 }

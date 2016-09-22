@@ -5,10 +5,10 @@ package com.jackleeentertainment.jackclock.object;
  */
 public class RFollowT {
 
-    final static int NONE=0;
-    final static int FOLLOWING=1;
-    final static int FOLLOWING_IWASREJECTED=2;
-    final static int FOLLOWED=3;
-    final static int FOLLOWED_IREJECTED=4;
+    public  final static String NONE="a";
+    public  final static String FOLLOWING="b";
+    public final static String FOLLOWING_IWASREJECTED="c";
+    public final static String FOLLOWED="d";
+    public final static String FOLLOWED_IREJECTED="e";
 
 }

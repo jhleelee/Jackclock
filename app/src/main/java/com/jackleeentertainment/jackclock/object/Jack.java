@@ -8,11 +8,16 @@ import java.util.List;
 
 public class Jack {
 
+
+    String jacktype;
+
     String oid;
     String title;
     String detail;
     List<String> tags;
 
+    //joinedNum
+    double joined;
     public Jack() {
         super();
     }
@@ -49,4 +54,21 @@ public class Jack {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
+
+    public double getJoined() {
+        return joined;
+    }
+
+    public void setJoined(int joined) {
+        this.joined = joined;
+    }
+
+    public String getJacktype() {
+        return jacktype;
+    }
+
+    public void setJacktype(String jacktype) {
+        this.jacktype = jacktype;
+    }
+
 }

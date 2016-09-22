@@ -13,7 +13,7 @@ public class AlarmOwnerMe extends JackOwnerMe{
     /*
         Alarm fields
         */
-    int rtype;
+    String rtype;
     String rweek;
     List<String> rdates;
 
@@ -31,9 +31,9 @@ public class AlarmOwnerMe extends JackOwnerMe{
     //Owner - to be searched (so, cannot use AlarmMember.java)
     List<String> owner_times;
     long owner_when;
-    int owner_sound_on;
-    int owner_vibe_on;
-    int owner_power_on;
+    boolean owner_sound_on;
+    boolean owner_vibe_on;
+    boolean owner_power_on;
 
 
     /*
@@ -44,9 +44,9 @@ public class AlarmOwnerMe extends JackOwnerMe{
 
     List<String> my_times;
     long my_when;
-   int my_sound_on;
-    int my_vibe_on;
-    int my_power_on;
+   boolean my_sound_on;
+    boolean my_vibe_on;
+    boolean my_power_on;
 
     //MyNotiSetting
     AlarmNotification alarmNotification;
@@ -72,27 +72,27 @@ public class AlarmOwnerMe extends JackOwnerMe{
         this.my_when = my_when;
     }
 
-    public int getMy_sound_on() {
+    public boolean getMy_sound_on() {
         return my_sound_on;
     }
 
-    public void setMy_sound_on(int my_sound_on) {
+    public void setMy_sound_on(boolean my_sound_on) {
         this.my_sound_on = my_sound_on;
     }
 
-    public int getMy_vibe_on() {
+    public boolean getMy_vibe_on() {
         return my_vibe_on;
     }
 
-    public void setMy_vibe_on(int my_vibe_on) {
+    public void setMy_vibe_on(boolean my_vibe_on) {
         this.my_vibe_on = my_vibe_on;
     }
 
-    public int getMy_power_on() {
+    public boolean getMy_power_on() {
         return my_power_on;
     }
 
-    public void setMy_power_on(int my_power_on) {
+    public void setMy_power_on(boolean my_power_on) {
         this.my_power_on = my_power_on;
     }
 
@@ -105,19 +105,19 @@ public class AlarmOwnerMe extends JackOwnerMe{
     }
 
 
-    public int getOwner_power_on() {
+    public boolean getOwner_power_on() {
         return owner_power_on;
     }
 
-    public void setOwner_power_on(int owner_power_on) {
+    public void setOwner_power_on(boolean owner_power_on) {
         this.owner_power_on = owner_power_on;
     }
 
-    public int getRtype() {
+    public String getRtype() {
         return rtype;
     }
 
-    public void setRtype(int rtype) {
+    public void setRtype(String rtype) {
         this.rtype = rtype;
     }
 
@@ -201,19 +201,19 @@ public class AlarmOwnerMe extends JackOwnerMe{
         this.owner_when = owner_when;
     }
 
-    public int getOwner_sound_on() {
+    public boolean getOwner_sound_on() {
         return owner_sound_on;
     }
 
-    public void setOwner_sound_on(int owner_sound_on) {
+    public void setOwner_sound_on(boolean owner_sound_on) {
         this.owner_sound_on = owner_sound_on;
     }
 
-    public int getOwner_vibe_on() {
+    public boolean getOwner_vibe_on() {
         return owner_vibe_on;
     }
 
-    public void setOwner_vibe_on(int owner_vibe_on) {
+    public void setOwner_vibe_on(boolean owner_vibe_on) {
         this.owner_vibe_on = owner_vibe_on;
     }
 }

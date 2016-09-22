@@ -11,11 +11,11 @@ public class AlarmMember {
     String profile_uid;
     String profile_name;
     List<String> alarm_times;
-    int alarm_isownertimes;
+    boolean alarm_isownertimes;
     long alarm_when;
-    int alarm_sound_on;
-    int alarm_vibe_on;
-    int alarm_power_on;
+    boolean alarm_sound_on;
+    boolean alarm_vibe_on;
+    boolean alarm_power_on;
 
 
     public AlarmMember() {
@@ -46,11 +46,11 @@ public class AlarmMember {
         this.alarm_times = alarm_times;
     }
 
-    public int getAlarm_isownertimes() {
+    public boolean getAlarm_isownertimes() {
         return alarm_isownertimes;
     }
 
-    public void setAlarm_isownertimes(int alarm_isownertimes) {
+    public void setAlarm_isownertimes(boolean alarm_isownertimes) {
         this.alarm_isownertimes = alarm_isownertimes;
     }
 
@@ -62,27 +62,27 @@ public class AlarmMember {
         this.alarm_when = alarm_when;
     }
 
-    public int getAlarm_sound_on() {
+    public boolean getAlarm_sound_on() {
         return alarm_sound_on;
     }
 
-    public void setAlarm_sound_on(int alarm_sound_on) {
+    public void setAlarm_sound_on(boolean alarm_sound_on) {
         this.alarm_sound_on = alarm_sound_on;
     }
 
-    public int getAlarm_vibe_on() {
+    public boolean getAlarm_vibe_on() {
         return alarm_vibe_on;
     }
 
-    public void setAlarm_vibe_on(int alarm_vibe_on) {
+    public void setAlarm_vibe_on(boolean alarm_vibe_on) {
         this.alarm_vibe_on = alarm_vibe_on;
     }
 
-    public int getAlarm_power_on() {
+    public boolean getAlarm_power_on() {
         return alarm_power_on;
     }
 
-    public void setAlarm_power_on(int alarm_power_on) {
+    public void setAlarm_power_on(boolean alarm_power_on) {
         this.alarm_power_on = alarm_power_on;
     }
 }
