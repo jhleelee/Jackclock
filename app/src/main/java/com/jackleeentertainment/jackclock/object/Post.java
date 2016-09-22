@@ -8,20 +8,22 @@ import java.util.List;
  */
 public class Post {
 
+
+
+    String oid;
     String uid;
     String name;
     String src;
     String txt;
-
     long ts;
-
-
-
     long revealat; // for video
-    int posttype ; // 0null, 1video, 2photo
+    String posttype ; // 0null, 1video, 2photo
     List<Comment> comments;
     List<String> like_uids;
 
+    public Post() {
+        super();
+    }
 
     public String getUid() {
         return uid;
@@ -71,11 +73,11 @@ public class Post {
         this.revealat = revealat;
     }
 
-    public int getPosttype() {
+    public String getPosttype() {
         return posttype;
     }
 
-    public void setPosttype(int posttype) {
+    public void setPosttype(String posttype) {
         this.posttype = posttype;
     }
 
@@ -95,6 +97,12 @@ public class Post {
         this.like_uids = like_uids;
     }
 
+    public String getOid() {
+        return oid;
+    }
 
+    public void setOid(String oid) {
+        this.oid = oid;
+    }
 
 }
