@@ -64,11 +64,14 @@
     <string name="snooze">Snooze</string>
 
 
+    <!--Notification-->
+    <string name="sent">sent</string>
+    <string name="message">message</string>
 
-
-
-
-
+    <string name="post">post</string>
+    <string name="posted">posted</string>
+    <string name="photo">photo</string>
+    <string name="video">video</string>
 
 
     <!--FirstVisitActivity-->

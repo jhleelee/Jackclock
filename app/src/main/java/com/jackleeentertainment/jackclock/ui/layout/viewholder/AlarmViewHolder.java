@@ -130,7 +130,7 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         tvSubTitle__lo_avatartitlesubtitle.setText(title);
     }
 
-    public void setAlarmRepeatText(int Rtype, String Rweek, List<String> Rdate) {
+    public void setAlarmRepeatText(String Rtype, String Rweek, List<String> Rdate) {
         //Method
     }
 
@@ -146,12 +146,12 @@ public class AlarmViewHolder extends RecyclerView.ViewHolder {
         //Method
     }
 
-    public void setMyPower(int isPowerOn) {
+    public void setMyPower(boolean isPowerOn) {
         //uiIvPower
         //uiScrimSolid
     }
 
-    public void setMySoundVibe(int isSoundOn, int isVibeOn) {
+    public void setMySoundVibe(boolean isSoundOn, boolean isVibeOn) {
         //zeroOne2FalseTrue
     }
 

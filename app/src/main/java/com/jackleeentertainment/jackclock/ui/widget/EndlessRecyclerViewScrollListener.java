@@ -1,9 +1,11 @@
 package com.jackleeentertainment.jackclock.ui.widget;
 
+import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.AttributeSet;
 
 /**
  * Created by Jacklee on 2016. 9. 21..
@@ -21,14 +23,56 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
     // Sets the starting page index
     private int startingPageIndex = 0;
 
+    /**
+     * A <code>LayoutManager</code> is responsible for measuring and positioning item views
+     * within a <code>RecyclerView</code> as well as determining the policy for when to recycle
+     * item views that are no longer visible to the user. By changing the <code>LayoutManager</code>
+     * a <code>RecyclerView</code> can be used to implement a standard vertically scrolling list,
+     * a uniform grid, staggered grids, horizontally scrolling collections and more. Several stock
+     * layout managers are provided for general use.
+     * <p/>
+     * If the LayoutManager specifies a default constructor or one with the signature
+     * ({@link Context}, {@link AttributeSet}, {@code int}, {@code int}), RecyclerView will
+     * instantiate and set the LayoutManager when being inflated. Most used properties can
+     * be then obtained from {@link #getProperties(Context, AttributeSet, int, int)}. In case
+     * a LayoutManager specifies both constructors, the non-default constructor will take
+     * precedence.
+     *
+     */
     RecyclerView.LayoutManager mLayoutManager;
 
+    public EndlessRecyclerViewScrollListener() {
+        super();
+    }
+
     public EndlessRecyclerViewScrollListener(LinearLayoutManager layoutManager) {
+
+        /*
+        A LayoutManager is responsible for measuring and positioning item views within
+        a RecyclerView as well as determining the policy for when to recycle item views
+        that are no longer visible to the user. By changing the LayoutManager a RecyclerView
+        can be used to implement a standard vertically scrolling list, a uniform grid,
+        staggered grids, horizontally scrolling collections and more.
+        Several stock layout managers are provided for general use.
+
+        If the LayoutManager specifies a default constructor or one with the signature
+        (Context, AttributeSet, int, int), RecyclerView will instantiate and set the
+        LayoutManager when being inflated. Most used properties can be then obtained from
+        getProperties(Context, AttributeSet, int, int). In case a LayoutManager specifies
+        both constructors, the non-default constructor will take precedence.
+         */
+
         this.mLayoutManager = layoutManager;
     }
 
     public EndlessRecyclerViewScrollListener(GridLayoutManager layoutManager) {
         this.mLayoutManager = layoutManager;
+        /**
+         * Returns the number of spans laid out by this grid.
+         *
+         * @return The number of spans
+         * @see #setSpanCount(int)
+         */
         visibleThreshold = visibleThreshold * layoutManager.getSpanCount();
     }
 
@@ -37,22 +81,34 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
         visibleThreshold = visibleThreshold * layoutManager.getSpanCount();
     }
 
-    public int getLastVisibleItem(int[] lastVisibleItemPositions) {
-        int maxSize = 0;
-        for (int i = 0; i < lastVisibleItemPositions.length; i++) {
-            if (i == 0) {
-                maxSize = lastVisibleItemPositions[i];
-            }
-            else if (lastVisibleItemPositions[i] > maxSize) {
-                maxSize = lastVisibleItemPositions[i];
-            }
-        }
-        return maxSize;
+    /*
+    Callback method to be invoked when RecyclerView's scroll state changes.
+    RecyclerView: The RecyclerView whose scroll state has changed.
+    int newState : The updated scroll state. One of SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING or
+    SCROLL_STATE_SETTLING.
+    */
+
+    @Override
+    public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+        super.onScrollStateChanged(recyclerView, newState);
     }
+
+    /*
+    Callback method to be invoked when the RecyclerView has been scrolled.
+    This will be called after the scroll has completed.
+
+    This callback will also be called if visible item range changes after a layout calculation.
+    In that case, dx and dy will be 0.
+
+    recyclerView	RecyclerView: The RecyclerView which scrolled.
+    dx	int: The amount of horizontal scroll.
+    dy	int: The amount of vertical scroll.
+    */
 
     // This happens many times a second during a scroll, so be wary of the code you place here.
     // We are given a few useful parameters to help us work out if we need to load some more data,
     // but first we check if we are waiting for the previous load to finish.
+
     @Override
     public void onScrolled(RecyclerView view, int dx, int dy) {
         int lastVisibleItemPosition = 0;
@@ -96,7 +152,25 @@ public abstract class EndlessRecyclerViewScrollListener extends RecyclerView.OnS
         }
     }
 
+
+
+    public int getLastVisibleItem(int[] lastVisibleItemPositions) {
+        int maxSize = 0;
+        for (int i = 0; i < lastVisibleItemPositions.length; i++) {
+            if (i == 0) {
+                maxSize = lastVisibleItemPositions[i];
+            }
+            else if (lastVisibleItemPositions[i] > maxSize) {
+                maxSize = lastVisibleItemPositions[i];
+            }
+        }
+        return maxSize;
+    }
+
+
+
     // Defines the process for actually loading more data based on page
     public abstract void onLoadMore(int page, int totalItemsCount);
+
 
 }

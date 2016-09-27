@@ -34,6 +34,8 @@
     <!--MainActivity-->
 
     <!--    MainActivity_Frag0-->
+    <dimen name="textSizeOfButton_frag_main">13sp</dimen>
+    <dimen name="buttonH_frag_main">40dp</dimen>
 
     <!--        i_alarm-->
     <dimen name="profilephotoHW_powerbtnHW__i_alarm">40dp</dimen>
@@ -58,5 +60,14 @@
     <dimen name="ivVideoSoundVibeIconHW__lo_alarm_more_content">14dp</dimen>
     <dimen name="textSizeOfDetailRecentPost__lo_alarm_more_content">12dp</dimen>
     <dimen name="textSizeOfVideoSoundVibe__lo_alarm_more_content">14sp</dimen>
+
+
+    <!--ChatActivity-->
+
+    <dimen name="textSizeOftvText__lo_chat_message">16sp</dimen>
+    <dimen name="textSizeOftvTs__lo_chat_message">10sp</dimen>
+    <dimen name="textSizeOftvSenderName__lo_chat_message">12sp</dimen>
+    <dimen name="marginThinOftvTs__lo_chat_message">4dip</dimen>
+    <dimen name="marginWideOftvTs__lo_chat_message">18dip</dimen>
 
 </resources>

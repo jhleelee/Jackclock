@@ -12,14 +12,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
-import com.socialalarm.Application;
-import com.socialalarm.util.fbase.FbaseSet;
 
 /**
  * Created by Jacklee on 15. 11. 13..
  */
 public class ApplicationLifecycleHandler implements android.app.Application.ActivityLifecycleCallbacks, ComponentCallbacks2 {
-
 
 
     private static final String TAG = ApplicationLifecycleHandler.class.getSimpleName();
@@ -133,8 +130,8 @@ public class ApplicationLifecycleHandler implements android.app.Application.Acti
                         Log.d(TAG, "dataSnapshot " + dataSnapshot.getValue().toString());
                         //{i=Jp25BJbpc0, n=BB, t=ㅇㄱ, r=NEMCaVaB2z, p=1447160223082}
 
-                        FbaseSet.set_Z_MyUid_PushKey_Null(dataSnapshot.getKey());
-                        DealWithReceivedMsg.deal(dataSnapshot);
+//                        FbaseSet.set_Z_MyUid_PushKey_Null(dataSnapshot.getKey());
+//                        DealWithReceivedMsg.deal(dataSnapshot);
                     }
 
                     @Override

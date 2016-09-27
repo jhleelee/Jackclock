@@ -96,7 +96,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
          */
 
 
-    public void setPosterNameAndDeed(String posterName, int deed) {
+    public void setPosterNameAndDeed(String posterName, String deed) {
         //tvTitle__lo_avatartitlesubtitle.setText();
     }
 

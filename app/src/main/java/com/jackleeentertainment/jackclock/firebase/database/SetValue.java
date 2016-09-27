@@ -5,6 +5,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.jackleeentertainment.jackclock.App;
 import com.jackleeentertainment.jackclock.Ram;
 import com.jackleeentertainment.jackclock.generalutil.LBR;
+import com.jackleeentertainment.jackclock.object.Chat;
 import com.jackleeentertainment.jackclock.object.Post;
 import com.jackleeentertainment.jackclock.object.Profile;
 
@@ -18,7 +19,8 @@ public class SetValue {
     Profile.class
     */
 
-    public static void myProfileCls(final Profile myProfile, final boolean toRamLBR) {
+    public static void myProfile(final Profile myProfile,
+                                 final boolean toRamLBR) {
         App.fbaseDbRef
                 .child(FBaseNode0.ProfileToMe)
                 .child(App.getUID())
@@ -35,8 +37,9 @@ public class SetValue {
                 });
     }
 
-    public static void profileCls(final String FBaseNode0T, final Profile myProfile, final boolean
-            toRamLBR) {
+    public static void profile(final String FBaseNode0T,
+                               final Profile myProfile,
+                               final boolean toRamLBR) {
         App.fbaseDbRef
                 .child(FBaseNode0T)
                 .child(App.getUID())
@@ -57,8 +60,8 @@ public class SetValue {
     Post.class
     */
 
-    public static void postCls(final Post post, final boolean
-            toRamLBR) {
+    public static void post(final Post post,
+                            final boolean toRamLBR) {
         App.fbaseDbRef
                 .child(FBaseNode0.Post)
                 .child(post.getOid())
@@ -74,8 +77,8 @@ public class SetValue {
                 });
     }
 
-    public static void postClsPushId(final Post post, final boolean
-            toRamLBR) {
+    public static void postWithPushId(final Post post,
+                                      final boolean toRamLBR) {
         String pushId = SetValueUtil.getPushKey(FBaseNode0.Post);
         post.setOid(pushId);
         App.fbaseDbRef
@@ -93,5 +96,8 @@ public class SetValue {
                 });
     }
 
+    public static void cache(final Chat chat,
+                                      final boolean toRamLBR) {
 
+    }
 }

@@ -16,3 +16,20 @@
 #   public *;
 #}
 -keep class android.support.v7.widget.SearchView { *; }
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+# FirebaseDatabase   https://firebase.google.com/docs/database/android/start/
+# Add this global rule
+-keepattributes Signature
+
+# This rule will properly ProGuard all the model classes in
+# the package com.yourcompany.models. Modify to fit the structure
+# of your app.
+-keepclassmembers com.jackleeentertainment.jackclock.object.** {
+  *;
+}

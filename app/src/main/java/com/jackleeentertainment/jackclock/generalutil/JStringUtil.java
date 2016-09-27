@@ -1,4 +1,4 @@
-package com.jackleeentertainment.jackclock.ui.util;
+package com.jackleeentertainment.jackclock.generalutil;
 
 /**
  * Created by Jacklee on 2016. 9. 10..

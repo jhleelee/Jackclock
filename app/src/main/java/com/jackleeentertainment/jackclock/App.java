@@ -11,7 +11,6 @@ package com.jackleeentertainment.jackclock;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
@@ -29,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.jackleeentertainment.jackclock.object.Profile;
+import com.jackleeentertainment.jackclock.ui.util.JM;
 
 
 import java.util.ArrayList;
@@ -39,40 +39,26 @@ import java.util.ArrayList;
 public class App extends Application {
 
     private final static String TAG = Application.class.getSimpleName();
+    private static Context appContext;
+    private String firebaseStorageSecondNodeForDpi;
 
-
+    //User Profile
     static Profile myProfile;
+    public static Uri UrlFbaseBasicPhoto;
 
+    //User Login
+    public static String token;
+
+    //Firebase Ref
     public static FirebaseAuth mAuth;
     public static FirebaseAuth.AuthStateListener mAuthListener;
     public static FirebaseDatabase firebaseDatabase;
     public static DatabaseReference fbaseDbRef;
     public static FirebaseStorage firebaseStorage;
-    public static StorageReference firebaseStorageReferenceFromUrl;
+    public static StorageReference fbaseStorageRef;
 
     public static boolean GIVEN_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGES = false;
-
-    private static Context appContext;
-
     public static int CURRENTFRAGMENT_MAINACTIVITY = 0;
-
-
-    /*
-    USER
-     */
-
-    public static Uri UrlFbaseBasicPhoto;
-    static String UID;
-    public static String Name;
-    public static String Ncode;
-    public static String PhoneNum;
-    public static String NcodePhoneNum;
-    public static String COMMENT;
-    public static String Email;
-    public static String Timezone;
-    public static String Locale;
-    public static String Snsid;
-    public static String URL_FACEBOOK_PROFILE_PHOTO;
 
 
 
@@ -87,6 +73,7 @@ public class App extends Application {
         Log.d(TAG, "Application.onCreate - Initializing application...");
         super.onCreate();
         appContext = getApplicationContext();
+        setFirebaseStorageSecondNodeForDpi(JM.getFbaseStorageSecondNodeWithDeviceDpi());
         myProfile = new Profile();
         initFbaseDatabase();
         initApplicationLifecycleHandler();
@@ -111,7 +98,7 @@ public class App extends Application {
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    App.nullifyFirebaseUser();
+                    App.nullifyUser();
 
                     context.startActivityForResult(
                             AuthUI.getInstance().createSignInIntentBuilder()
@@ -180,13 +167,12 @@ public class App extends Application {
 
     public static void initFbaseDatabaseRef() {
         Log.d(TAG, "initFbaseDatabaseRef()");
-
         fbaseDbRef = firebaseDatabase.getReference();
-
     }
+
     public static void initFbaseStorage() {
         firebaseStorage = FirebaseStorage.getInstance();
-        firebaseStorageReferenceFromUrl = firebaseStorage.getReferenceFromUrl("gs://project-5788136259447833395.appspot.com");
+        fbaseStorageRef = firebaseStorage.getReferenceFromUrl("gs://project-5788136259447833395.appspot.com");
         Log.d(TAG, "firebaseStorage.getApp().getMname() :"+firebaseStorage.getApp().getName());
 
     }
@@ -235,32 +221,29 @@ public class App extends Application {
                 }
             });
 
-
-
-            myProfile.setUid(firebaseUser.getUid());
+            firebaseUserToMyProfile(firebaseUser);
 
             // Name, email address, and profile photo Url
-            Name = firebaseUser.getDisplayName();
-            Email = firebaseUser.getEmail();
-            UrlFbaseBasicPhoto = firebaseUser.getPhotoUrl();
+             UrlFbaseBasicPhoto = firebaseUser.getPhotoUrl();
 
         }
     }
-    public static String token;
 
 
     public static String getUID(){
 
-        if (App.UID!=null){
-            return  UID;
+        if (App.myProfile.getUid()!=null){
+            return  App.myProfile.getUid();
         } else {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
                 // User is signed in
-                App.UID = user.getUid();
+
+                myProfile.setUid( user.getUid());
                 return user.getUid();
             } else {
                 // No user is signed in
+                nullifyUser();
                 return null;
             }
         }
@@ -268,7 +251,7 @@ public class App extends Application {
     }
 
     public static void setUID(String UID){
-        App.UID = UID;
+        myProfile.setUid(UID);
 
     }
 
@@ -294,21 +277,25 @@ public class App extends Application {
                 }
             });
 
-            UID = firebaseUser.getUid();
-            Log.d(TAG, "UID : "+UID);
-            // Name, email address, and profile photo Url
-            Name = firebaseUser.getDisplayName();
-            Email = firebaseUser.getEmail();
+            firebaseUserToMyProfile(firebaseUser);
             UrlFbaseBasicPhoto = firebaseUser.getPhotoUrl();
         }
     }
 
-    public static void nullifyFirebaseUser() {
+
+    public static void firebaseUserToMyProfile(FirebaseUser firebaseUser){
+        myProfile.setUid(firebaseUser.getUid());
+        myProfile.setFull_name(firebaseUser.getDisplayName());
+        myProfile.setEmail(firebaseUser.getEmail());
+    }
+
+
+
+    public static void nullifyUser() {
+
         firebaseUser = null;
+        myProfile = null;
         token = null;
-        UID = null;
-        Name = null;
-        Email = null;
         UrlFbaseBasicPhoto = null;
     }
 
@@ -316,6 +303,14 @@ public class App extends Application {
     /*
     Getter and Setter
      */
+    public String getFirebaseStorageSecondNodeForDpi() {
+        return firebaseStorageSecondNodeForDpi;
+    }
+
+    public void setFirebaseStorageSecondNodeForDpi(String fStorageSecondNodeForDpi) {
+        this.firebaseStorageSecondNodeForDpi = fStorageSecondNodeForDpi;
+    }
+
     public Profile getMyProfile() {
         return myProfile;
     }
@@ -323,6 +318,7 @@ public class App extends Application {
     public void setMyProfile(Profile myProfile) {
         this.myProfile = myProfile;
     }
+
 
 
 }

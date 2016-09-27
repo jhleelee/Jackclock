@@ -22,11 +22,20 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
+   <style name="Button">
+    </style>
 
+    <style name="Button.TwoButtonForMainFrag">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">4dip</item>
+        <item name="android:paddingBottom">4dip</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/slt_twoputtonforfriendship_primary</item>
 
-
-
-    <style name="Button">
     </style>
 
     <style name="Button.TwoButtonForFriendShip">
@@ -185,6 +194,84 @@
 
 
 
+    <style name="lo_sendmessage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+
+    </style>
+
+    <style name="iv_attach">
+        <item name="android:layout_width">36dip</item>
+        <item name="android:layout_height">36dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/ic_add_white_48dp</item>
+        <item name="android:padding">4dip</item>
+
+    </style>
+
+
+    <style name="iv_emoji">
+        <item name="android:layout_width">36dip</item>
+        <item name="android:layout_height">36dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/ic_insert_emoticon_white_48dp</item>
+        <item name="android:padding">4dip</item>
+
+    </style>
+
+
+    <style name="et_sendmessage">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:layout_weight">100</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:background">@color/transparent</item>
+
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">3</item>
+
+        <item name="android:minLines">1</item>
+        <item name="android:paddingBottom">3dip</item>
+        <item name="android:paddingTop">3dip</item>
+        <item name="android:scrollbars">vertical</item>
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dip</item>
+    </style>
+
+    <style name="iv_sendmessage">
+        <item name="android:layout_width">36dip</item>
+        <item name="android:layout_height">36dip</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@drawable/ic_send_white_48dp</item>
+        <item name="android:padding">4dip</item>
+
+
+    </style>
+
+
+
+    <style name="lv_chat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <!--<item name="android:background">@color/color_base_a</item>-->
+
+
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dip</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+
+        <item name="android:padding">0dip</item>
+        <item name="android:stackFromBottom">true</item>
+        <item name="android:transcriptMode">alwaysScroll</item>
+    </style>
 
 
     <style name="tvAlarmClockAMPM">

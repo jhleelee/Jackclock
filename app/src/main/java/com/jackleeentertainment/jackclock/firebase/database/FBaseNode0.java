@@ -1,4 +1,4 @@
-package com.jackleeentertainment.jackclock.network.path;
+package com.jackleeentertainment.jackclock.firebase.database;
 
 /**
  * Created by Jacklee on 2016. 9. 11..
@@ -22,5 +22,8 @@ public class FBaseNode0 {
     public final static String AlarmSound = "alarm_sound";
     public final static String AlarmVibe = "alarm_vibe";
     public final static String AlarmVideo = "alarm_video";
+
+    public final static String Post = "post";
+
 
 }
